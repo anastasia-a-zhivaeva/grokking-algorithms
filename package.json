@@ -1,0 +1,22 @@
+{
+  "name": "grokking-algorithms",
+  "version": "1.0.0",
+  "description": "Algorithms and tasks from the book Grokking Algorithms A. Y. Bhargava",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anastasia-a-zhivaeva/grokking-algorithms.git"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "Anastasia Zhivaeva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anastasia-a-zhivaeva/grokking-algorithms/issues"
+  },
+  "homepage": "https://github.com/anastasia-a-zhivaeva/grokking-algorithms#readme"
+}
