@@ -1,2 +1,4 @@
 .idea/*
 .DC_Store
+dist/*
+node_modules/*
