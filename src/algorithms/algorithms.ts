@@ -19,4 +19,29 @@ export class Algorithms {
       }
     }
   }
+
+  static selectionSort<T>(array: T[]): T[] {
+    if (!array || !array.length) {
+      return [];
+    }
+    const newArray: T[] = [];
+    while (array.length) {
+      const smallestIndex = Algorithms.findSmallestIndex(array);
+      newArray.push(array[smallestIndex]);
+      array.splice(smallestIndex, 1);
+    }
+    return newArray;
+  }
+
+  private static findSmallestIndex<T>(array: T[]): number {
+    let smallest = array[0];
+    let smallestIndex = 0;
+    array.forEach((item, index) => {
+      if (item < smallest) {
+        smallest = item;
+        smallestIndex = index;
+      }
+    });
+    return smallestIndex;
+  }
 }

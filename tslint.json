@@ -36,6 +36,7 @@
       }
     ],
     "max-line-length": [true, 160],
-    "align": false
+    "align": false,
+    "ter-arrow-parens": false
   }
 }

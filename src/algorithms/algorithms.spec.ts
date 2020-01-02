@@ -15,3 +15,11 @@ it('Binary Search, array = [1, 3, 5, 7, 9], item = -1, result = undefined', () =
 it('Binary Search, array = [], item = -1, result = undefined', () => {
   expect(Algorithms.binarySearch([], -1)).toBeUndefined();
 });
+
+it('Selection Sort, array = [5, 3, 6, 2, 10], result = [2, 3, 5, 6, 10]', () => {
+  expect(Algorithms.selectionSort([5, 3, 6, 2, 10])).toStrictEqual([2, 3, 5, 6, 10]);
+});
+
+it('Selection Sort, array = [], result = []', () => {
+  expect(Algorithms.selectionSort([])).toStrictEqual([]);
+});
