@@ -7,7 +7,7 @@
     "webpack": "webpack",
     "start": "webpack && node dist/src/app.js",
     "lint": "tslint --project tsconfig.json \"**/*.ts\"",
-    "test": "CI=true jest --watchAll --colors --coverage"
+    "test": "jest --colors --coverage"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/anastasia-a-zhivaeva/grokking-algorithms#readme",
   "devDependencies": {
+    "@olavoparno/jest-badges-readme": "^1.4.0",
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.2",
     "husky": "^3.1.0",
@@ -40,7 +41,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged && jest --colors --coverage && node_modules/.bin/jest-badges-readme && git add 'README.md'"
     }
   }
 }
