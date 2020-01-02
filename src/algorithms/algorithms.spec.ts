@@ -1,4 +1,4 @@
-import { Algorithms } from '@src/algorithms/algorithms';
+import { Algorithms } from '@src/algorithms';
 
 it('Binary Search, array = [1, 3, 5, 7, 9], item = 3, result = 1', () => {
   expect(Algorithms.binarySearch([1, 3, 5, 7, 9], 3)).toBe(1);
