@@ -1,0 +1,50 @@
+version: 2.1
+jobs:
+  lint:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Lint
+          command: nmp run lint
+  test:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: npm test
+      - run:
+          name: Generate code coverage
+          command: nmp run coverage
+      - run:
+          name: Update README with code coverage results
+          command: git add 'README.md' && git commit -m "Update coverage" && git push -u origin master
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - lint
+      - test:
+          requires:
+            - lint
+          filters:
+            branches:
+              only: master

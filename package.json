@@ -7,7 +7,8 @@
     "webpack": "webpack",
     "start": "webpack && node dist/src/app.js",
     "lint": "tslint --project tsconfig.json \"**/*.ts\"",
-    "test": "jest --colors --coverage"
+    "test": "jest --colors --coverage",
+    "coverage": "node_modules/.bin/jest-badges-readme"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && jest --colors --coverage && node_modules/.bin/jest-badges-readme && git add 'README.md'"
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }

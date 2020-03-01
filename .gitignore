@@ -1,5 +1,5 @@
 .idea/*
-.DC_Store
+.DS_Store
 dist/*
 node_modules/*
 coverage/*
