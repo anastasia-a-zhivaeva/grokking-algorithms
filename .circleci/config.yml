@@ -46,6 +46,9 @@ jobs:
           name: Generate code coverage
           command: npm run coverage
       - run:
+          name: Configue git user
+          command: git config user.email "anastasia.a.zhivaeva@gmail.com" && git config user.name "anastasia-a-zhivaeva"
+      - run:
           name: Update README with code coverage results
           command: git add 'README.md' && git commit -m "Update coverage" && git push -u origin master
 
