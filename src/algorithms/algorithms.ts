@@ -1,5 +1,5 @@
 export class Algorithms {
-  static binarySearch<T>(array: T[], item: T): number | undefined {
+  static binarySearch<T>(array: T[] | undefined, item: T): number | undefined {
     if (!array?.length) {
       return;
     }
@@ -20,7 +20,7 @@ export class Algorithms {
     }
   }
 
-  static selectionSort<T>(array: T[]): T[] {
+  static selectionSort<T>(array: T[] | undefined): T[] {
     if (!array?.length) {
       return [];
     }
@@ -33,7 +33,7 @@ export class Algorithms {
     return newArray;
   }
 
-  static sum(array: number[]): number {
+  static sum(array: number[] | undefined): number {
     if (!array?.length) {
       return 0;
     }
@@ -45,7 +45,7 @@ export class Algorithms {
     return total;
   }
 
-  static sumRecursive(array: number[]): number {
+  static sumRecursive(array: number[] | undefined): number {
     if (!array?.length) {
       return 0;
     }
@@ -57,7 +57,7 @@ export class Algorithms {
     return array[0] + this.sumRecursive(array.slice(1));
   }
 
-  static elementsCount<T>(array: T[]): number {
+  static elementsCount<T>(array: T[] | undefined): number {
     if (!array?.length) {
       return 0;
     }
@@ -65,7 +65,7 @@ export class Algorithms {
     return 1 + this.elementsCount(array.slice(1));
   }
 
-  static max<T>(array: T[]): T | undefined {
+  static max<T>(array: T[] | undefined): T | undefined {
     if (!array?.length) {
       return;
     }
@@ -80,10 +80,10 @@ export class Algorithms {
   }
 
   static binarySearchRecursive<T>(
-    array: T[],
+    array: T[] | undefined,
     item: T,
     low = 0,
-    high = array.length - 1
+    high = (array?.length || 0) - 1
   ): number | undefined {
     if (!array?.length) {
       return;
@@ -103,7 +103,7 @@ export class Algorithms {
     }
   }
 
-  private static findSmallestIndex<T>(array: T[]): number {
+  private static findSmallestIndex<T>(array: T[] | undefined): number {
     if (!array?.length) {
       return -1;
     }
