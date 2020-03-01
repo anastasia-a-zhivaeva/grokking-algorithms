@@ -50,7 +50,7 @@ jobs:
           command: git config user.email "anastasia.a.zhivaeva@gmail.com" && git config user.name "anastasia-a-zhivaeva"
       - run:
           name: Update README with code coverage results
-          command: git add 'README.md' && git commit -m "Update coverage" && git push -u origin master
+          command: git add 'README.md' && git commit -m "Update coverage [skip ci]" && git push -u origin master
 
 workflows:
   version: 2.1
