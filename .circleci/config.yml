@@ -20,7 +20,7 @@ jobs:
             - node_modules
       - run:
           name: Lint
-          command: nmp run lint
+          command: npm run lint
   test:
     working_directory: ~/repo
     docker:
@@ -32,7 +32,7 @@ jobs:
           command: npm test
       - run:
           name: Generate code coverage
-          command: nmp run coverage
+          command: npm run coverage
       - run:
           name: Update README with code coverage results
           command: git add 'README.md' && git commit -m "Update coverage" && git push -u origin master
