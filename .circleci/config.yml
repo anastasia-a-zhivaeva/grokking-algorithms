@@ -86,15 +86,15 @@ jobs:
               exit 0
             fi
 
-            if [[ ! $GIT_COMMIT_DESC == *"release"* ]] then
+            if [[ ! $GIT_COMMIT_DESC == *"release"* ]]; then
               npm version major -m "Bumped to version %s [ci skip]"
             fi
 
-            if [[ ! $GIT_COMMIT_DESC == *"feature"* ]] then
+            if [[ ! $GIT_COMMIT_DESC == *"feature"* ]]; then
               npm version minor -m "Bumped to version %s [ci skip]"
             fi
 
-            if [[ ! $GIT_COMMIT_DESC == *"fix"* ]] then
+            if [[ ! $GIT_COMMIT_DESC == *"fix"* ]]; then
               npm version patch -m "Bumped to version %s [ci skip]"
             fi
 
