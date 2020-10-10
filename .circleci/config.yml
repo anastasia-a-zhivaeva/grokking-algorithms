@@ -88,21 +88,22 @@ jobs:
 
             git pull
 
-            if [[ ! $GIT_COMMIT_DESC == *"release"* ]]; then
+            if [[ $GIT_COMMIT_DESC == *"release"* ]]; then
               echo "Major"
               npm version major -m "Bumped to version %s [ci skip]"
             fi
 
-            if [[ ! $GIT_COMMIT_DESC == *"feature"* ]]; then
+            if [[ $GIT_COMMIT_DESC == *"feature"* ]]; then
               echo "Minor"
               npm version minor -m "Bumped to version %s [ci skip]"
             fi
 
-            if [[ ! $GIT_COMMIT_DESC == *"fix"* ]]; then
+            if [[ $GIT_COMMIT_DESC == *"fix"* ]]; then
               echo "Patch"
               npm version patch -m "Bumped to version %s [ci skip]"
             fi
 
+            npm publish
 workflows:
   version: 2.1
   build_and_test:
