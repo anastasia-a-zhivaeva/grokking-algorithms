@@ -79,26 +79,22 @@ jobs:
           name: Detect version type, Change version and Publish
           command: |
             GIT_COMMIT_DESC="$(git log --format=oneline -n 1 $CIRCLE_SHA1)"
-            echo "${GIT_COMMIT_DESC}"
+            echo $GIT_COMMIT_DESC
 
-            FEATURE="feature"
-            FIX="fix"
-            RELEASE="release"
-
-            if [[ ! "${GIT_COMMIT_DESC}" == *"${FEATURE}"* ]] && [[ ! "${GIT_COMMIT_DESC} == *"${FIX}"* ]] && [[ ! "${GIT_COMMIT_DESC} == *"${RELEASE}"* ]]; then
+            if [[ ! $GIT_COMMIT_DESC == *"feature"* ]] && [[ ! $GIT_COMMIT_DESC == *"fix"* ]] && [[ ! $GIT_COMMIT_DESC == *"release"* ]]; then
               echo "Do not release"
               exit 0
             fi
 
-            if [[ ! "${GIT_COMMIT_DESC}" == *"${RELEASE}"* ]]; then
+            if [[ ! $GIT_COMMIT_DESC == *"release"* ]] then
               npm version major -m "Bumped to version %s [ci skip]"
             fi
 
-            if [[ ! "${GIT_COMMIT_DESC}" == *"${FEATURE}"* ]]; then
+            if [[ ! $GIT_COMMIT_DESC == *"feature"* ]] then
               npm version minor -m "Bumped to version %s [ci skip]"
             fi
 
-            if [[ ! "${GIT_COMMIT_DESC}" == *"${FIX}"* ]]; then
+            if [[ ! $GIT_COMMIT_DESC == *"fix"* ]] then
               npm version patch -m "Bumped to version %s [ci skip]"
             fi
 
