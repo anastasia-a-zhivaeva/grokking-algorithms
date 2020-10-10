@@ -4,9 +4,11 @@
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | ![Statements](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg) | ![Functions](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg) | ![Lines](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg) |
 
-### This repository contains several algorithms described in the book Grokking Algorithms A. Y. Bhargava
+#### This repository contains
 
-It's also published to npm as simple example of library.
+- Several algorithms described in the book Grokking Algorithms A. Y. Bhargava
+- Tests of this algorithms using Jest
+- CircleCI config for linting, testing and publishing to npm
 
 ### Commands
 
