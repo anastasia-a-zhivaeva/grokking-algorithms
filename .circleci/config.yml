@@ -76,6 +76,9 @@ jobs:
           name: Configue git user
           command: git config user.email "anastasia.a.zhivaeva@gmail.com" && git config user.name "anastasia-a-zhivaeva"
       - run:
+          name: Pull repository
+          command: git pull
+      - run:
           name: Detect version type, Change version and Publish
           command: |
             GIT_COMMIT_DESC="$(git log --format=oneline -n 1 $CIRCLE_SHA1)"
@@ -85,8 +88,6 @@ jobs:
               echo "Do not release"
               exit 0
             fi
-
-            git pull
 
             if [[ $GIT_COMMIT_DESC == *"release"* ]]; then
               echo "Major"
