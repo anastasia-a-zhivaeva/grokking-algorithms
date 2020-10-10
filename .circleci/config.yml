@@ -103,7 +103,8 @@ jobs:
               npm version patch -m "Bumped to version %s [ci skip]"
             fi
 
-            npm publish
+            npm publish --access public
+
 workflows:
   version: 2.1
   build_and_test:
