@@ -1,0 +1,10 @@
+.*
+**/tsconfig.json
+**/webpack.config.js
+node_modules
+src
+**/.prettierignore
+**/.prettierrc
+**/jest.config.js
+**/tslint.json
+.DS_Store

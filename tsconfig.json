@@ -12,10 +12,11 @@
     "outDir": "dist",
     "rootDir": "./",
     "baseUrl": ".",
+    "declaration": true,
     "lib": ["es2017", "esnext.asynciterable"],
     "paths": {
       "@src/*": ["./src/*"]
     }
   },
-  "exclude": ["node_modules", "coverage", "build", ".git", "typings"]
+  "exclude": ["node_modules", "coverage", "build", ".git", "typings", "dist", "**/__tests__/*"]
 }

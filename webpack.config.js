@@ -3,15 +3,15 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const destPath = path.join(__dirname, 'dist/src');
 module.exports = {
-  entry: 'src/app.ts',
+  entry: 'src/index.ts',
   output: {
     libraryTarget: 'commonjs',
     path: destPath,
-    filename: 'app.js',
+    filename: 'index.js',
   },
   devtool: 'inline-source-map',
   target: 'node',
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
