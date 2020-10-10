@@ -76,7 +76,7 @@ jobs:
           name: Configue git user
           command: git config user.email "anastasia.a.zhivaeva@gmail.com" && git config user.name "anastasia-a-zhivaeva"
       - run:
-          name: Detect version, Change version and Publish
+          name: Detect version type, Change version and Publish
           command: |
             GIT_COMMIT_DESC="$(git log --format=oneline -n 1 $CIRCLE_SHA1)"
             echo "${GIT_COMMIT_DESC}"
