@@ -81,9 +81,9 @@ jobs:
             GIT_COMMIT_DESC="$(git log --format=oneline -n 1 $CIRCLE_SHA1)"
             echo "${GIT_COMMIT_DESC}"
 
-            FEATURE=".+feature"
-            FIX=".+fix"
-            RELEASE=".+release"
+            FEATURE="feature"
+            FIX="fix"
+            RELEASE="release"
 
             if [[ ! "${GIT_COMMIT_DESC}" =~ $FEATURE ]] && [[ ! "${GIT_COMMIT_DESC} =~ $FIX ]] && [[ ! "${GIT_COMMIT_DESC} =~ $RELEASE ]]; then
               echo "Do not release"
