@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/anastasia-a-zhivaeva/grokking-algorithms#readme",
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "LICENSE",
+    "README.md"
   ],
   "devDependencies": {
     "@types/jest": "^26.0.14",

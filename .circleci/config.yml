@@ -51,7 +51,57 @@ jobs:
       - run:
           name: Update README with code coverage results
           command: git add 'README.md' && git commit --allow-empty -m "Update coverage [skip ci]" && git push -u origin master
+  publish:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Add token to .npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN_FULL_ACCESS}" > ~/.npmrc
+      - run:
+          name: Configue git user
+          command: git config user.email "anastasia.a.zhivaeva@gmail.com" && git config user.name "anastasia-a-zhivaeva"
+      - run:
+          name: Detect version, Change version and Publish
+          command: |
+            GIT_COMMIT_DESC="$(git log --format=oneline -n 1 $CIRCLE_SHA1)"
+            echo "${GIT_COMMIT_DESC}"
 
+            FEATURE="feature"
+            FIX="fix"
+            RELEASE="release"
+
+            if [[ ! $GIT_COMMIT_DESC =~ $FEATURE ]] && [[ ! $GIT_COMMIT_DESC =~ $FIX ]] && [[ ! $GIT_COMMIT_DESC =~ $RELEASE ]]; then
+              exit 0
+            fi
+
+            if [[ ! $GIT_COMMIT_DESC =~ $RELEASE ]]; then
+              npm version major -m "Bumped to version %s [ci skip]"
+            fi
+
+            if [[ ! $GIT_COMMIT_DESC =~ $FEATURE ]]; then
+              npm version minor -m "Bumped to version %s [ci skip]"
+            fi
+
+            if [[ ! $GIT_COMMIT_DESC =~ $FIX ]]; then
+              npm version patch -m "Bumped to version %s [ci skip]"
+            fi
+
+            npm publish
 workflows:
   version: 2.1
   build_and_test:
@@ -60,6 +110,14 @@ workflows:
       - test:
           requires:
             - lint
+          filters:
+            branches:
+              only: master
+      - publish:
+          context:
+            - NPM_TOKEN
+          requires:
+            - test
           filters:
             branches:
               only: master
