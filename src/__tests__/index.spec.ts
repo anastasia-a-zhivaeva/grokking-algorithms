@@ -109,9 +109,9 @@ it('Sum, array = undefined, result = 0', () => {
 });
 
 it('Find Smallest Index (private function), array = [], result = -1', () => {
-  expect(Algorithms['findSmallestIndex']([])).toBe(-1);
+  expect(Algorithms.findSmallestIndex([])).toBe(-1);
 });
 
 it('Find Smallest Index (private function), array = undefined, result = -1', () => {
-  expect(Algorithms['findSmallestIndex'](undefined)).toBe(-1);
+  expect(Algorithms.findSmallestIndex(undefined)).toBe(-1);
 });

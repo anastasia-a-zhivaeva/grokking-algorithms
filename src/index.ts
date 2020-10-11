@@ -1,3 +1,8 @@
+/**
+ * This function implements Binary Search an item in an array
+ * @param array
+ * @param item
+ */
 export function binarySearch<T>(array: T[] | undefined, item: T): number | undefined {
   if (!array?.length) {
     return;
@@ -19,6 +24,10 @@ export function binarySearch<T>(array: T[] | undefined, item: T): number | undef
   }
 }
 
+/**
+ * This function implements Selection Sort of an array
+ * @param array
+ */
 export function selectionSort<T>(array: T[] | undefined): T[] {
   if (!array?.length) {
     return [];
@@ -32,6 +41,10 @@ export function selectionSort<T>(array: T[] | undefined): T[] {
   return newArray;
 }
 
+/**
+ * This function summarizes items of an array
+ * @param array
+ */
 export function sum(array: number[] | undefined): number {
   if (!array?.length) {
     return 0;
@@ -44,6 +57,10 @@ export function sum(array: number[] | undefined): number {
   return total;
 }
 
+/**
+ * This function summarizes items of an array recursively
+ * @param array
+ */
 export function sumRecursive(array: number[] | undefined): number {
   if (!array?.length) {
     return 0;
@@ -56,6 +73,10 @@ export function sumRecursive(array: number[] | undefined): number {
   return array[0] + sumRecursive(array.slice(1));
 }
 
+/**
+ * This function calculates the number of items in an array recursively
+ * @param array
+ */
 export function elementsCount<T>(array: T[] | undefined): number {
   if (!array?.length) {
     return 0;
@@ -64,6 +85,10 @@ export function elementsCount<T>(array: T[] | undefined): number {
   return 1 + elementsCount(array.slice(1));
 }
 
+/**
+ * This function finds an item with the maximum value in an array recursively
+ * @param array
+ */
 export function max<T>(array: T[] | undefined): T | undefined {
   if (!array?.length) {
     return;
@@ -78,6 +103,13 @@ export function max<T>(array: T[] | undefined): T | undefined {
   return current > maxValue ? current : maxValue;
 }
 
+/**
+ * This function implements Binary Search an item in an array recursively
+ * @param array
+ * @param item
+ * @param low
+ * @param high
+ */
 export function binarySearchRecursive<T>(
   array: T[] | undefined,
   item: T,
@@ -102,6 +134,10 @@ export function binarySearchRecursive<T>(
   }
 }
 
+/**
+ * This function finds the index of the smallest item in an array
+ * @param array
+ */
 export function findSmallestIndex<T>(array: T[] | undefined): number {
   if (!array?.length) {
     return -1;
