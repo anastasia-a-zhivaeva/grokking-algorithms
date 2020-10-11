@@ -10,6 +10,12 @@
 - Tests of this algorithms using Jest
 - CircleCI config for linting, testing and publishing to npm
 
+#### Install package
+
+```yaml
+npm i @anastasia-a-zhivaeva/grokking-algorithms
+```
+
 ### Commands
 
 - start: build application for local development

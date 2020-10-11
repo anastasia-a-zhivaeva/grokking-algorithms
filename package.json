@@ -21,8 +21,12 @@
   "keywords": [
     "algorithms"
   ],
-  "author": "Anastasia Zhivaeva",
-  "license": "ISC",
+  "author": {
+    "name": "Anastasia Zhivaeva",
+    "email": "anastasia.a.zhivaeva@gmail.com",
+    "url": "https://github.com/anastasia-a-zhivaeva"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/anastasia-a-zhivaeva/grokking-algorithms/issues"
   },
@@ -32,6 +36,10 @@
     "LICENSE",
     "README.md"
   ],
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.8",
