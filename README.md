@@ -16,6 +16,14 @@
 npm i @anastasia-a-zhivaeva/grokking-algorithms
 ```
 
+#### Use package
+
+```yaml
+import { binarySearch } from '@anastasia-a-zhivaeva/grokking-algorigthms';
+
+binarySearch([1, 2, 3], 3);
+```
+
 ### Commands
 
 - start: build application for local development
