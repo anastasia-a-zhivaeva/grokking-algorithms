@@ -22,6 +22,7 @@ npm i @anastasia-a-zhivaeva/grokking-algorithms
 import { binarySearch } from '@anastasia-a-zhivaeva/grokking-algorigthms';
 
 binarySearch([1, 2, 3], 3);
+selectionSort([1, 2, 3]);
 ```
 
 ### Commands
