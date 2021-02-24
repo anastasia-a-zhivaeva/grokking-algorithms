@@ -89,8 +89,6 @@ jobs:
               exit 0
             fi
 
-            git clean -f
-
             if [[ $GIT_COMMIT_DESC == *"release"* ]]; then
               echo "Major"
               npm version major -m "Bumped to version %s [ci skip]"
@@ -103,7 +101,7 @@ jobs:
 
             if [[ $GIT_COMMIT_DESC == *"fix"* ]]; then
               echo "Patch"
-              npm version patch -m "Bumped to version %s [ci skip]"
+              npm version patch -m "Bumped to version %s [ci skip]" --force
             fi
 
             npm publish --access public
