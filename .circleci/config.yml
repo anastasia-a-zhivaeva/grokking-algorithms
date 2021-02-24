@@ -3,7 +3,7 @@ jobs:
   lint:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:14/.15
     steps:
       - checkout
       - run:
@@ -24,7 +24,7 @@ jobs:
   test:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:14.15
     steps:
       - checkout
       - run:
@@ -54,7 +54,7 @@ jobs:
   publish:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:14.15
     steps:
       - checkout
       - run:
