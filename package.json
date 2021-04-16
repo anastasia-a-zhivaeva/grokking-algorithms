@@ -11,7 +11,7 @@
     "build": "webpack",
     "prepublishOnly": "webpack -p",
     "postversion": "git push && git push --tags",
-    "lint": "npx eslint . --ext .ts",
+    "lint": "./node_modules/.bin/eslint . --ext .ts",
     "test": "jest --colors --coverage",
     "coverage": "istanbul-badges-readme"
   },
