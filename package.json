@@ -7,12 +7,11 @@
   "module": "dist/src/index.js",
   "scripts": {
     "webpack": "webpack",
-    "eslint": "eslint",
     "start": "webpack && node dist/src/index.js",
     "build": "webpack",
     "prepublishOnly": "webpack -p",
     "postversion": "git push && git push --tags",
-    "lint": "eslint . --ext .ts",
+    "lint": "npx eslint . --ext .ts",
     "test": "jest --colors --coverage",
     "coverage": "istanbul-badges-readme"
   },
