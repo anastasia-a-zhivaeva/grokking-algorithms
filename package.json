@@ -1,6 +1,6 @@
 {
   "name": "@anastasia-a-zhivaeva/grokking-algorithms",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "Algorithms and tasks from the book Grokking Algorithms A. Y. Bhargava",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
