@@ -9,7 +9,7 @@
     "webpack": "webpack",
     "start": "webpack && node dist/src/index.js",
     "build": "webpack",
-    "prepublishOnly": "webpack -p",
+    "prepublishOnly": "webpack --mode production",
     "postversion": "git push && git push --tags",
     "lint": "./node_modules/.bin/eslint . --ext .ts",
     "test": "jest --colors --coverage",
